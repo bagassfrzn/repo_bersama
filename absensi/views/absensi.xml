@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> 
+
+    <record id="absensi_view_form" model="ir.ui.view">
+        <field name="name">absensi.view.form</field>
+        <field name="model">absen.modul</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="nis" />
+                            <field name="date" />
+                            <field name="training" />
+                            <field name="status" />
+                        </group>
+                        <group>
+                            <field name="grade" />
+                            <field name="majoring" />
+                            <field name="division" />
+                            <field name="trainer" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="absensi_view_tree" model="ir.ui.view">
+        <field name="name">absensi.view.tree</field>
+        <field name="model">absen.modul</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name" />
+                <field name="nis" />
+                <field name="date" />
+                <field name="grade" />
+                <field name="majoring" />
+                <field name="division" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="absen_action" model="ir.actions.act_window">
+        <field name="name">Absen</field>
+        <field name="res_model">absen.modul</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p>
+                Submit Absen
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="absen_menu_root" name="Absensi App"/>
+    <menuitem id="absen_menu" name="Absen" action="absen_action" parent="absen_menu_root"/>
+
+    <record id="absensi_view_kanban" model="ir.ui.view">
+        <field name="name">absensi.view.kanban</field>
+        <field name="model">absen.modul</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="row">
+                                <div t-if="record.name.value" class="col-4">
+                                    <h5>Nama    :</h5>
+                                    <h5>Kelas   :</h5>
+                                    <h5>Jurusan :</h5>
+                                </div>
+                                <div t-if="record.grade.value" class="col-8">
+                                    
+                                    <h5><field name="name" /></h5>
+                                    <h5><field name="grade" />  </h5>
+                                    <h5><field name="majoring" /></h5>
+                                    
+                                    
+                                </div>
+                               
+                            </div>
+                        </div>           
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> 
+
+    <record id="inherit_absensi_view_form_bgz" model="ir.ui.view">
+            <field name="name">inherit_absensi_view_form_bgz</field>
+            <field name="model">absen.modul</field>
+            <field name="inherit_id" ref="absensi.absensi_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="goldar"/>
+                </xpath>
+            </field>
+        </record>
+
+   
+
+</odoo>

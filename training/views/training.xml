@@ -1,0 +1,139 @@
+<odoo>
+    <!-- form  -->
+    <record id="training_course_view_form" model="ir.ui.view">
+        <field name="name">trining.form</field>
+        <field name="model">training.module</field>
+        <field name="arch" type="xml">
+             <form string="">
+                <sheet>
+                    <label for="name" />
+                    <h1>
+                        <field name="name" />
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="date" />
+                            <field name="trainer_id" />
+                            <!-- <field name="trainer_phone" /> -->
+                            <!-- <field name="assistant_ids" /> -->
+                            <field name="asisten" widget="many2many_tags"/>
+                            <field name="state" />
+                        </group> 
+                        <group>
+                            <field name="total_attendees" />
+                            <field name="registration_amount" />
+                        </group> 
+                    </group>
+                    <field name="description" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <!-- form  -->
+    <record id="trainer_view_form" model="ir.ui.view">
+        <field name="name">trainer.form</field>
+        <field name="model">trainer.module</field>
+        <field name="arch" type="xml">
+             <form string="">
+                <sheet>
+                    <label for="name" />
+                    <h1>
+                        <field name="name" />
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="email" />
+                            <field name="phone" />
+                            <!-- <field name="trainer_phone" /> -->
+                            <!-- <field name="assistant_ids" /> -->
+                            <!-- <field name="asisten" widget="many2many_tags"/>
+                            <field name="state" /> -->
+                        </group> 
+                        <group>
+                            <!-- <field name="total_attendees" />
+                            <field name="registration_amount" /> -->
+                            <field name="description" />
+                        </group> 
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+
+    <!-- Tree View -->
+    <record id="training_course_view_tree" model="ir.ui.view">
+        <field name="name">trining.tree</field>
+        <field name="model">training.module</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="date" />
+                <field name="total_attendees" />
+                <field name="registration_amount" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+    <!-- Tree View -->
+    <record id="trainer_view_tree" model="ir.ui.view">
+        <field name="name">trainer.tree</field>
+        <field name="model">trainer.module</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="phone" />
+                <field name="email" />
+                <field name="description" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- action windows -->
+    <record id="action_training_view" model="ir.actions.act_window">
+        <field name="name">Training</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">training.module</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Add a new training
+            </p>
+        </field>
+    </record>
+    <!-- action windows -->
+    <record id="action_trainer_view" model="ir.actions.act_window">
+        <field name="name">Training</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">trainer.module</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Add a new trainer
+            </p>
+        </field>
+    </record>
+
+    <!-- menu item -->
+    <menuitem id="training_menu_root" name="Training"/>
+    <menuitem id="training_menu" name="Training" action="action_training_view" parent="training_menu_root" />
+    <menuitem id="trainer_menu" name="Trainer" action="action_trainer_view" parent="training_menu_root" />
+
+    <!-- notebook -->
+    <!-- <notebook>
+        <page name="" string="Attendees">
+            <field name="attendee_ids">
+                <tree>
+                    <field name="attendee_id" />
+                    <field name="phone" />
+                    <field name="presence" />
+                </tree>
+            </field>
+        </page>
+    </notebook> -->
+
+    
+</odoo>
