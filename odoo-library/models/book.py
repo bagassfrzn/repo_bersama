@@ -1,3 +1,5 @@
+from odoo import models, fields
+
 class book(models.Model):
     _name = 'book.module'
     _description = 'modul untuk buku'
@@ -8,8 +10,22 @@ class book(models.Model):
     genre = fields.Char('genre')
     summary = fields.Text('summary')
     author = fields.Char('author')
-    field_name = fields.Selection([
-                                    ('key', 'value')
-                                ], string='field_name')
+    format = fields.Selection([
+                                    ('paperback', 'Paperback'),
+                                    ('hardcover', 'hardcover'),
+                                    ('audiobook', 'audiobook'),
+                                    ('e-book', 'e-book'),
+                                ], string='format')
+    language = fields.Selection([
+                                    ('en', 'en'),
+                                    ('es', 'es'),
+                                    ('fr', 'fr'),
+                                    ('de', 'de'),
+                                ], string='Language')
+    edition = fields.Integer('edition')
+    publisher = fields.Char('publisher')
+    publish_date = fields.Date('publish date')
+    price = fields.Monetary('price')
+
     
     
