@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="book1" model="book.module">
+        <field name="name">Odoo 16 Guidebook : Functional side</field>
+        <field name="isbn">12.2023.8978</field>
+        <field name="genre">knowledge</field>
+    </record>
+    <record id="book2" model="book.module">
+        <field name="name">Odoo 16 Guidebook : Technical side</field>
+        <field name="isbn">12.2023.8979</field>
+        <field name="genre">knowledge</field>
+    </record>
+    <record id="book3" model="book.module">
+        <field name="name">Odoo 16 Guidebook : Project side</field>
+        <field name="isbn">12.2023.8980</field>
+        <field name="genre">knowledge</field>
+    </record>
+</odoo>
