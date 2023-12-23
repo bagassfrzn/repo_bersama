@@ -27,4 +27,30 @@
             </form>
         </field>
     </record>
+
+    <record id="course_view_list" model="ir.ui.view">
+        <field name="name">course.view.list</field>
+        <field name="model">academy.course</field>
+        <field name="arch" type="xml">
+            <tree string="Course List">
+                <field name="name" />
+                <field name="level" />
+                <field name="description" />
+                <field name="create_date" optional="hide" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="course_view_search" model="ir.ui.view">
+        <field name="name">course.view.search</field>
+        <field name="model">academy.course</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="name" />
+                <field name="description" />
+                <filter name="groupby_level" string="level" context="{'group_by': 'level'}" />
+            </search>
+        </field>
+    </record>
+
 </odoo>

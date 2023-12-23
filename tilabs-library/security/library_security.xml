@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="library_active_modify" model="ir.rule">
+            <field name="field_name">field_value</field>
+        </record>
+        
+    
+    </data>
+</odoo>
