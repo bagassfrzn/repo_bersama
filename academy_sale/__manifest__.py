@@ -14,6 +14,8 @@
     ],
     'data': [
         'views/academy_sale_menuitem.xml',
+        'views/course_view.xml',
+        'views/product_template_view.xml'
     ],
     'demo': [
         ''
