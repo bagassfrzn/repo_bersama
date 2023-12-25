@@ -1,11 +1,13 @@
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError 
+from odoo.tools import date_utils
 
 class Session(models.Model):
     _name = 'academy.session'
     _description = 'Session Info'
     
-    name = fields.Char('Title')
+    # name = fields.Char('Title')
+    name = fields.Char(string="Title", related="course_id.name",readonly=False)
     # session_number = fields.Char('Session Number', 
     #                              default=lambda self:self.env['ir.sequence'].next_by_code('session.number'))
     session_number = fields.Char('Session Number', 
@@ -17,9 +19,11 @@ class Session(models.Model):
     #     return super().create(vals)
     date_start = fields.Datetime('date start', required=True)
     date_end = fields.Datetime('date end', required=True)
+    duration = fields.Integer(string="Duration", compute="_compute_session_duration", inverse="_inverse_session_duration",readonly=False)
     course_id = fields.Many2one('academy.course', string='Course',ondelete='cascade',required=True)
     instructor_id = fields.Many2one('res.users', string='Instructor',ondelete='restrict')
     student_ids = fields.Many2many('res.partner', string='Students')
+    description = fields.Text(related="course_id.description")
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -33,3 +37,14 @@ class Session(models.Model):
         for session in self:
             if(session.date_start > session.date_end):
                 raise ValidationError('Tanggal berakhir tidak bisa sebelum tanggal mulai')
+
+    @api.depends("date_start","date_end")
+    def _compute_session_duration(self):
+        for record in self:
+            if record.date_start and record.date_end:
+                record.duration = (record.date_end - record.date_start).days + 1
+
+    def _inverse_session_duration(self):
+        for record in self:
+            if record.date_start and record.duration:
+                record.date_end = date_utils.add(record.date_start, days=record.duration-1)

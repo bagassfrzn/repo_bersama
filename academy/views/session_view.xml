@@ -14,13 +14,30 @@
                             <separator string="Session Data"/>
                             <field name="course_id" />
                             <field name="instructor_id" />
-                            <field name="date_start" widget="daterange" options="{'related_end_date':'date_end'}"/>
-                            <field name="date_end" widget="daterange" options="{'related_start_date':'date_start'}" />
+                            <label string="Date" for="date_start"/>
+                                <div class="o_row">
+                                    <field name="date_start" widget="daterange" options="{'related_end_date':'date_end'}"/>
+                                    <span>to</span>
+                                    <field name="date_end" widget="daterange" options="{'related_start_date':'date_start'}" />
+                                </div>
+                            <div class="o_row">
+                            <label string="Duration" for="duration"/>
+                                <span class="o_row">
+                                    <field name="duration" />Days
+                                </span>
+                            </div>
+                           
+                            
                         </group>
                         <group>
                             <separator string="Other Fields"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description" />
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
