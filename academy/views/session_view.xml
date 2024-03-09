@@ -5,7 +5,9 @@
         <field name="model">academy.session</field>
         <field name="arch" type="xml">
             <form string="Session View">
-                <header></header>
+                <header>
+                    <field name="status" options="{'clickable': '1', 'fold_field': 'fold'}" widget="statusbar"/>
+                </header>
                 <sheet>
                     <h1><field name="name" /></h1>
                     <h1><field name="session_number" /></h1>
@@ -31,6 +33,7 @@
                         </group>
                         <group>
                             <separator string="Other Fields"/>
+                            <field name="level_course"  />
                         </group>
                     </group>
                     <notebook>

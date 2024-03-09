@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="reason_wizard_view_form" model="ir.ui.view">
+            <field name="name">reason.wizard.view.form</field>
+            <field name="model">reason.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Change Status Reason">
+                    <field name="reason" />
+                    <footer>
+                        <button string="Submit" name="submit_reason" type="object" class="btn-primary"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

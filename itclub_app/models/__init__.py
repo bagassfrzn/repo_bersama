@@ -1,0 +1,1 @@
+from . import regist_model

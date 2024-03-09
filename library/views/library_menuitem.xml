@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- ACTION -->
+    <record id="action_book_user_view_tree" model="ir.actions.act_window">
+        <!-- <field name="sequence" eval="1"/> -->
+        <!-- <field name="act_window_id" ref="action_id"/> -->
+        <field name="name">Book User View Tree</field>
+        <field name="view_mode">tree,form</field>
+        <field name="res_model">book.modul</field>
+        <!-- <field name="view_id" ref="book_user_view_tree"/> -->
+        <field name="view_ids" eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('book_user_view_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('book_user_view_form')})]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No One User data
+            </p>
+        </field>
+    </record>
+    <record id="action_book_admin_view_tree" model="ir.actions.act_window">
+        <!-- <field name="sequence" eval="1"/> -->
+        <!-- <field name="act_window_id" ref="action_id"/> -->
+        <field name="name">Book Admin View Tree</field>
+        <field name="view_mode">tree,form</field>
+        <field name="res_model">book.modul</field>
+        <!-- <field name="view_id" ref="book_admin_view_tree"/> -->
+        <field name="view_ids" eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('book_admin_view_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('book_admin_view_form')})]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No One Admin data
+            </p>
+        </field>
+    </record>
+    
+
+<!-- MENU ITEM -->
+     <menuitem name="Library Apps" id="menu_library"  sequence="1">
+        <menuitem id="sub_menu_library" name="Master Data" sequence="1" >
+            <menuitem id="menu_library_user" name="User" sequence="2" action="action_book_user_view_tree"/>
+            <menuitem id="menu_library_admin" name="Admin" sequence="3" action="action_book_admin_view_tree"/>
+        </menuitem>
+    </menuitem>
+</odoo>

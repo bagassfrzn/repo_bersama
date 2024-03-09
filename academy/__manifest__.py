@@ -7,6 +7,7 @@
         - Attendees """,
     'summary': 'Tilabs Academy is testing modul for learning',
     'author': 'Bagas Sfrzn',
+    'images': ['static/src/img/academy.png'], 
     'website': 'bagas.id',
     'license': 'LGPL-3',
     'category': 'Knowledge',
@@ -22,6 +23,7 @@
         'views/course_view.xml',
         'views/session_view.xml',
         'demo/course_demo.xml',
+        'wizard/reason_wizard_view.xml',
     ],
     'demo': [
         'demo/course_demo.xml', 
