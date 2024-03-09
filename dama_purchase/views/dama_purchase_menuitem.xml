@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="parent_dama_purchase_menu" name="Pembelian" sequence="1">
+        <menuitem id="child_dama_purchase_submenu" name="Master Data Pembelian" sequence="1">
+            <menuitem
+                id="sub_child_menu_purchase"
+                name="Product"
+                action="dama_purchase_action"
+                sequence="2"/>
+        </menuitem>
+    </menuitem>
+    
+    
+
+</odoo>

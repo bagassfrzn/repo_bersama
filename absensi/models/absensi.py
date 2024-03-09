@@ -15,4 +15,4 @@ class AbsensiModels(models.Model):
     status = fields.Selection(related='training.state',string="status")
     
     
-    
+     

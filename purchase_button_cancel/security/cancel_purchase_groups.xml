@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_cancel_purchase" model="res.groups">
+        <field name="name">Allow Cancel Purchase</field>
+    </record>
+</odoo>

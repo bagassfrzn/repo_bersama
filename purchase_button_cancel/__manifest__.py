@@ -1,5 +1,5 @@
 {
-    'name': 'Hide Cancel Purchase',
+    'name': 'Hide Cancel Purchase bagas',
     'version': '1.0',
     'description': 'Hide button cancel on purchase order',
     'summary': '',
@@ -8,10 +8,11 @@
     'license': 'LGPL-3',
     'category': 'technical',
     'depends': [
-        'purchase.order',
+        'purchase',
     ],
     'data': [
-        ''
+        'views/cancel-button.xml',
+        'security/cancel_purchase_groups.xml',
     ],
     'demo': [
         ''

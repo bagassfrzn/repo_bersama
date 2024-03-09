@@ -9,9 +9,9 @@
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="goldar"/>
                 </xpath>
+                <xpath expr="//field[@name='nis']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
             </field>
         </record>
-
-   
-
 </odoo>
